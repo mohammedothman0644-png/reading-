@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10182f">
+<title>Teaching Language Skills | Teaching Reading</title>
+<style>
+:root{
+ --bg:#f3f6fc;--surface:#fff;--surface2:#eaf0fb;--text:#17213b;--muted:#63708c;
+ --primary:#465cf5;--secondary:#08b8ad;--accent:#ffad55;--line:#dce4f2;
+ --shadow:0 16px 45px rgba(29,48,92,.10);--radius:22px;
+}
+body.dark{--bg:#0b1020;--surface:#131c32;--surface2:#1b2843;--text:#edf3ff;--muted:#aab7d1;--primary:#8290ff;--secondary:#4dd8ce;--accent:#ffc078;--line:#293754;--shadow:0 18px 45px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.7;font-size:17px;transition:.25s}
+button,input{font:inherit}.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 4vw;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 8px 20px #465cf544}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:13px;padding:9px 13px;cursor:pointer;font-weight:700}.btn:hover{transform:translateY(-2px);border-color:var(--primary)}.btn.primary{background:var(--primary);color:white;border-color:transparent}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);max-width:1600px;margin:auto;gap:24px;padding:24px}
+.sidebar{position:sticky;top:82px;height:calc(100vh - 105px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.sidebar h3{margin:4px 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}
+.navlink{display:block;width:100%;text-align:left;text-decoration:none;color:var(--muted);padding:9px 11px;border-radius:11px;font-weight:650;font-size:14px;margin:2px 0;border:0;background:transparent;cursor:pointer}
+.navlink:hover,.navlink.active{background:var(--surface2);color:var(--primary)}
+main{min-width:0}.hero{position:relative;overflow:hidden;padding:clamp(28px,5vw,64px);border-radius:30px;background:linear-gradient(120deg,#18234b,#334de0 60%,#05a99e);color:white;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff30;border-radius:50%;right:-100px;top:-140px;box-shadow:0 0 0 35px #ffffff0b,0 0 0 75px #ffffff08}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:#b8fff5}.hero h1{font-size:clamp(34px,5vw,60px);line-height:1.08;margin:12px 0}.hero p{max-width:760px;color:#e4eaff;font-size:18px}.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.tag{padding:7px 12px;border:1px solid #ffffff50;border-radius:999px;background:#ffffff17;font-size:13px;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 28px}.stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}.stat strong{display:block;font-size:25px;color:var(--primary)}.stat span{font-size:13px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,30px);margin:20px 0;box-shadow:var(--shadow);scroll-margin-top:90px}
+.panel h2{font-size:clamp(24px,3vw,34px);line-height:1.2;margin:0 0 12px}.panel h3{font-size:21px;margin:24px 0 8px;color:var(--primary)}.panel h4{margin:18px 0 5px;font-size:17px}.panel p{margin:8px 0;color:var(--text)}.muted{color:var(--muted)!important}.callout{border-left:5px solid var(--secondary);background:var(--surface2);padding:14px 17px;border-radius:0 14px 14px 0;margin:14px 0}.example{border:1px dashed var(--secondary);background:color-mix(in srgb,var(--secondary) 7%,var(--surface));padding:13px 16px;border-radius:14px;margin:12px 0}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini{background:var(--surface2);padding:16px;border-radius:16px}.mini h4{margin-top:0;color:var(--primary)}
+.mindmap{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative}.mapnode{border:1px solid var(--line);background:var(--surface2);padding:16px;border-radius:17px;text-align:left;color:var(--text);cursor:pointer;transition:.2s}.mapnode:hover{transform:translateY(-4px);border-color:var(--primary);box-shadow:var(--shadow)}.mapnode b{display:block;color:var(--primary);font-size:15px}.mapnode small{color:var(--muted)}.mapcenter{grid-column:1/-1;text-align:center;background:linear-gradient(110deg,var(--primary),var(--secondary));color:white;border-radius:18px;padding:20px;font-size:22px;font-weight:900}
+.searchbox{width:min(420px,100%);padding:11px 14px;border-radius:13px;border:1px solid var(--line);background:var(--surface);color:var(--text)}
+.accordion{border:1px solid var(--line);border-radius:15px;margin:10px 0;overflow:hidden}.accordion summary{cursor:pointer;padding:13px 16px;font-weight:800;background:var(--surface2)}.accordion .inside{padding:14px 17px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}th,td{border:1px solid var(--line);padding:11px;text-align:left;vertical-align:top}th{background:var(--surface2);color:var(--primary)}
+.progresswrap{height:6px;background:var(--surface2);position:fixed;top:0;left:0;width:100%;z-index:40}.progressbar{height:100%;width:0;background:linear-gradient(90deg,var(--secondary),var(--primary))}
+.footer{text-align:center;color:var(--muted);padding:35px 10px}.pill{display:inline-block;background:var(--surface2);color:var(--primary);padding:3px 9px;border-radius:999px;font-size:12px;font-weight:800}
+@media(max-width:950px){.layout{grid-template-columns:1fr;padding:14px}.sidebar{position:relative;top:auto;height:auto;max-height:260px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){body{font-size:16px}.topbar{padding:10px 12px}.brand span:last-child{font-size:13px}.actions .btn{padding:8px;font-size:13px}.layout{padding:10px}.hero{border-radius:22px}.grid2,.mindmap{grid-template-columns:1fr}.mapcenter{grid-column:auto}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}table{font-size:13px;display:block;overflow-x:auto}}
+@media print{.topbar,.sidebar,.actions,.progresswrap{display:none!important}.layout{display:block;padding:0}.panel,.hero{box-shadow:none;break-inside:avoid}.hero{background:#263b9b!important;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="progresswrap"><div class="progressbar" id="progress"></div></div>
+<header class="topbar">
+ <div class="brand"><div class="logo">📖</div><span>READING LAB <span class="pill">STUDY HUB</span></span></div>
+ <div class="actions">
+  <button class="btn" id="fontDown" title="Decrease font">A−</button><button class="btn" id="fontUp" title="Increase font">A+</button>
+  <button class="btn" id="theme">🌙 Dark mode</button><button class="btn" onclick="window.print()">⤓ Print / PDF</button>
+ </div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+ <h3>Learning navigation</h3>
+ <input class="searchbox" id="search" placeholder="Search this study guide…" aria-label="Search">
+ <nav id="nav">
+  <a class="navlink active" href="#overview">✦ Overview & Mind Map</a>
+  <a class="navlink" href="#intro">01 · Introduction</a>
+  <a class="navlink" href="#reasons">02 · Reasons for Reading</a>
+  <a class="navlink" href="#benefits">03 · Language Benefits</a>
+  <a class="navlink" href="#kinds">04 · Kinds of Reading</a>
+  <a class="navlink" href="#approach">05 · Choosing an Approach</a>
+  <a class="navlink" href="#levels">06 · Reading Levels</a>
+  <a class="navlink" href="#texts">07 · Types of Texts</a>
+  <a class="navlink" href="#skills">08 · Reading Skills</a>
+  <a class="navlink" href="#principles">09 · Six Principles</a>
+  <a class="navlink" href="#sequences">10 · Reading Sequences</a>
+  <a class="navlink" href="#activities">11 · Activities</a>
+  <a class="navlink" href="#extensive">12 · Extensive Reading</a>
+  <a class="navlink" href="#review">13 · Final Review</a>
+  <a class="navlink" href="#exam">★ Exam Differences</a>
+ </nav>
+ <p class="muted" style="font-size:12px">Tip: Select a mind-map node or a menu item to jump to that topic.</p>
+</aside>
+<main>
+<section class="hero" id="overview">
+ <div class="eyebrow">Teaching Language Skills · Part One</div>
+ <h1>Teaching<br>Reading</h1>
+ <p>An interactive learning platform for understanding reading instruction, reading strategies, classroom activities, and the principles of effective reading lessons.</p>
+ <div class="hero-tags"><span class="tag">🧠 Mind map</span><span class="tag">📚 Complete study notes</span><span class="tag">🔎 Searchable topics</span><span class="tag">📱 Responsive design</span></div>
+</section>
+<div class="stats">
+ <div class="stat"><strong>13</strong><span>Main study sections</span></div><div class="stat"><strong>6</strong><span>Core reading strategies</span></div><div class="stat"><strong>6</strong><span>Teaching principles</span></div><div class="stat"><strong>4</strong><span>Extensive-reading factors</span></div>
+</div>
+<section class="panel">
+ <h2>🧭 Interactive Mind Map</h2><p class="muted">Teaching Reading is the central idea. Choose a branch to explore its explanation.</p>
+ <div class="mindmap">
+  <div class="mapcenter">TEACHING READING</div>
+  <button class="mapnode" onclick="go('reasons')"><b>01 · Why read?</b><small>Study, pleasure, language, writing, knowledge</small></button>
+  <button class="mapnode" onclick="go('benefits')"><b>02 · Language benefits</b><small>Vocabulary, grammar, fluency, thinking, confidence</small></button>
+  <button class="mapnode" onclick="go('kinds')"><b>03 · Reading types</b><small>Extensive and intensive reading</small></button>
+  <button class="mapnode" onclick="go('levels')"><b>04 · Reader & text</b><small>Proficiency, background, interest, support</small></button>
+  <button class="mapnode" onclick="go('texts')"><b>05 · Text selection</b><small>Authentic and graded texts</small></button>
+  <button class="mapnode" onclick="go('skills')"><b>06 · Strategies</b><small>Skimming, scanning, detail, inference, context, structure</small></button>
+  <button class="mapnode" onclick="go('principles')"><b>07 · Six principles</b><small>Frequency, engagement, response, prediction, tasks, full use</small></button>
+  <button class="mapnode" onclick="go('sequences')"><b>08 · Lesson sequences</b><small>Sunscreen, campaigns, WebQuest</small></button>
+  <button class="mapnode" onclick="go('activities')"><b>09 · Classroom activities</b><small>Jigsaw, puzzles, newspapers, recipes, poetry, more</small></button>
+  <button class="mapnode" onclick="go('extensive')"><b>10 · Reading culture</b><small>Library, choice, feedback, time</small></button>
+  <button class="mapnode" onclick="go('exam')"><b>★ Exam revision</b><small>Important conceptual differences</small></button>
+ </div>
+</section>
+
+<section class="panel" id="intro"><h2>01. Introduction to Teaching Reading</h2>
+<p>Reading is one of the four main language skills, together with writing, listening, and speaking. It is a <b>receptive skill</b> because learners receive information and understand messages through written language.</p>
+<p>Teaching reading is not simply asking students to read aloud or translate every word. It means helping them understand texts, find information, recognise main ideas, understand vocabulary in context, and use different reading strategies.</p>
+<div class="callout"><b>Key idea:</b> A good reading lesson has a clear purpose. Students may read to find specific information, understand the general meaning, study language, or enjoy a text.</div>
+</section>
+
+<section class="panel" id="reasons"><h2>02. Reasons for Reading</h2>
+<div class="grid2">
+ <div class="mini"><h4>2.1 Study and Work</h4><p>Reading supports education and future careers. Students read textbooks, academic articles, instructions, reports, emails, and professional documents. University students use textbooks to prepare for exams; doctors read professional information; employees read workplace reports.</p></div>
+ <div class="mini"><h4>2.2 Pleasure and Choice</h4><p>People also read because they enjoy stories, novels, magazines, blogs, or articles. Allowing students to choose texts that interest them increases motivation and helps build positive reading habits.</p></div>
+ <div class="mini"><h4>2.3 Language Development</h4><p>Regular reading introduces vocabulary and shows grammar in real situations. It builds familiarity with tenses, sentence structures, punctuation, expressions, spelling, and how words work together.</p></div>
+ <div class="mini"><h4>2.4 Models for Writing</h4><p>Reading shows learners how writers organise ideas, construct sentences, develop paragraphs, and connect ideas. An essay, for example, models an introduction, main points, examples, and a conclusion.</p></div>
+ <div class="mini"><h4>2.5 Knowledge and Curiosity</h4><p>Reading introduces cultures, countries, history, science, and people's experiences. Interesting texts encourage students to ask questions, express opinions, and join discussions.</p></div>
+</div></section>
+
+<section class="panel" id="benefits"><h2>03. Why Reading Matters in Language Learning</h2>
+<div class="accordion" open><summary>3.1 Vocabulary grows in context</summary><div class="inside"><p>Students meet words in meaningful situations and can often guess meaning from nearby clues rather than memorising isolated words.</p><div class="example">“The weather was freezing, so we stayed inside.”<br><b>Freezing</b> means extremely cold. Reading also teaches collocations such as <i>make a decision</i> and <i>heavy rain</i>.</div></div></div>
+<div class="accordion"><summary>3.2 Grammar becomes visible</summary><div class="inside"><p>Texts show how grammar works naturally: past tense for past events, present tense for general facts, linking words to connect ideas, and pronouns referring to previously mentioned people or things.</p></div></div>
+<div class="accordion"><summary>3.3 Fluency develops over time</summary><div class="inside"><p>Fluency is reading smoothly, accurately, and with less effort. Regular reading makes common words, expressions, and sentence patterns easier to recognise.</p></div></div>
+<div class="accordion"><summary>3.4 Critical thinking is practised</summary><div class="inside"><p>Readers distinguish facts from opinions, identify a writer's purpose, compare ideas, evaluate information, and make evidence-based conclusions.</p></div></div>
+<div class="accordion"><summary>3.5 Reading can build confidence</summary><div class="inside"><p>Suitable texts let learners experience success. A beginner who understands a short graded story may gradually feel ready for longer or more challenging texts.</p></div></div>
+</section>
+
+<section class="panel" id="kinds"><h2>04. Different Kinds of Reading</h2>
+<div class="grid2">
+ <div class="mini"><span class="pill">READ MORE</span><h3>4.1 Extensive Reading</h3><p>Reading large amounts of material, usually for pleasure, interest, or general understanding. Students may read novels, stories, magazines, newspapers, websites, and blogs.</p><ul><li><b>Learner choice:</b> choose texts that match interests and level.</li><li><b>Accessible language:</b> understand without checking every word; graded readers can help.</li><li><b>Regular routine:</b> read frequently to build a habit.</li><li><b>Light accountability:</b> diaries, short reviews, and discussion—not constant testing.</li><li><b>Teacher's role:</b> encourage, recommend, and provide materials.</li></ul><p><b>Success:</b> regular reading, enjoyment, engagement, and general understanding.</p></div>
+ <div class="mini"><span class="pill">READ CAREFULLY</span><h3>4.2 Intensive Reading</h3><p>Careful study of a relatively short text to understand details, vocabulary, grammar, organisation, and meaning. It often happens in class with teacher guidance.</p><h4>Three stages</h4><ol><li><b>Before reading:</b> introduce the topic, activate prior knowledge, ask questions, examine title or pictures, and predict.</li><li><b>During reading:</b> identify main ideas and supporting details, use context for vocabulary, and notice grammar and linking expressions.</li><li><b>After reading:</b> summarise, answer questions, discuss the message, or support interpretations with evidence.</li></ol><p>Avoid analysing everything at once or translating word by word. Teach learners to use context, word parts, and surrounding information.</p></div>
+</div>
+<div class="callout"><b>Remember:</b> Extensive reading develops reading habits and general fluency. Intensive reading develops careful understanding and language awareness. Both are necessary.</div>
+</section>
+
+<section class="panel" id="approach"><h2>05. Choosing the Right Reading Approach</h2>
+<table><tr><th>Purpose</th><th>Suitable approach</th><th>Example</th></tr>
+<tr><td>Enjoyment</td><td>Extensive reading</td><td>Choose a story and read without frequent interruption.</td></tr>
+<tr><td>Find specific information</td><td>Scanning</td><td>Search for a date, name, price, or location.</td></tr>
+<tr><td>Understand the general message</td><td>Skimming</td><td>Read the title and key parts to identify the topic.</td></tr>
+<tr><td>Develop language awareness</td><td>Intensive reading</td><td>Examine vocabulary, grammar, expressions, and paragraph organisation.</td></tr>
+<tr><td>Develop independence</td><td>Strategy practice</td><td>Teach strategies, then let students use them independently.</td></tr></table>
+<div class="callout">The reading method should match the learning objective.</div></section>
+
+<section class="panel" id="levels"><h2>06. Reading Levels: Matching Text and Reader</h2>
+<p>Reading level is the difficulty of a text and how suitable it is for a learner. A text that is too difficult may discourage students; one that is too easy may offer too little challenge.</p>
+<div class="grid2">
+ <div class="mini"><h4>6.1 Proficiency</h4><p>The learner's current language ability. Beginners may understand a short story with simple sentences but struggle with a complex academic article.</p></div>
+ <div class="mini"><h4>6.2 Background Knowledge</h4><p>Information and experience learners already have. Someone familiar with football may understand a match report more easily than an unfamiliar scientific text.</p></div>
+ <div class="mini"><h4>6.3 Interest and Purpose</h4><p>Interesting topics increase motivation. Teachers should also consider why students are reading and what they should learn.</p></div>
+ <div class="mini"><h4>6.4 Support</h4><p>Help can include key vocabulary, topic explanations, pictures, guiding questions, and pair work.</p></div>
+ <div class="mini"><h4>6.5 A Productive Challenge</h4><p>Choose a text that is slightly challenging but still understandable. Balance learners' current abilities with opportunities to grow.</p></div>
+</div></section>
+
+<section class="panel" id="texts"><h2>07. Authentic Texts and Adapted or Graded Texts</h2>
+<div class="grid2">
+ <div class="mini"><h3>7.1 Authentic texts</h3><p>Texts originally written for real-world readers, not specifically for language learners.</p><p><b>Examples:</b> newspapers, menus, public signs, advertisements, websites, letters, and workplace documents.</p><p><b>Advantages:</b> natural vocabulary, expressions, sentence structures, and realistic communication.</p><p><b>Challenge:</b> idioms, cultural references, difficult vocabulary, and complex sentences may be hard for beginners.</p></div>
+ <div class="mini"><h3>7.2 Adapted or graded texts</h3><p>Texts written or modified for a particular language level or learning purpose.</p><p>Writers may simplify vocabulary, shorten sentences, reduce grammatical complexity, or add explanations. For example, a novel may be rewritten for intermediate learners.</p><p><b>Advantages:</b> supports independent reading and reduces the need for constant teacher help.</p><p><b>Important:</b> good adaptation preserves the main message and natural communication as much as possible.</p></div>
+</div><div class="callout"><b>Main difference:</b> Authentic texts are made for real-world communication; graded texts are adjusted to suit learners' abilities. Select according to level and lesson objectives, then gradually introduce more challenging authentic materials.</div></section>
+
+<section class="panel" id="skills"><h2>08. Core Reading Skills and Strategies</h2>
+<p>Readers do not need to read every text in the same way. They choose strategies according to their purpose.</p>
+<div class="accordion" open><summary>8.1 Skimming — get the general idea</summary><div class="inside"><p>Read quickly to understand the topic or main idea. Look at the title, headings, opening sentences, and repeated words; do not focus on every detail.</p><div class="example"><b>Example:</b> Look at an article's title and first paragraph to understand its general subject.</div></div></div>
+<div class="accordion"><summary>8.2 Scanning — find specific information</summary><div class="inside"><p>Move your eyes quickly through a text to find information you already know you need, such as a date, phone number, name, price, or location.</p><div class="example"><b>Example:</b> Search an advertisement for the price of a product.</div></div></div>
+<div class="accordion"><summary>8.3 Reading for Detail — understand accurately</summary><div class="inside"><p>Read carefully and pay attention to sentences, explanations, examples, and supporting evidence. Important for academic reading and examinations.</p></div></div>
+<div class="accordion"><summary>8.4 Inferring — understand implied meaning</summary><div class="inside"><p>Use clues in the text and background knowledge to understand something the writer does not state directly.</p><div class="example">“Ali entered with wet clothes and an umbrella.” We can infer that it was probably raining.</div></div></div>
+<div class="accordion"><summary>8.5 Guessing from Context — work out an unfamiliar word</summary><div class="inside"><p>Use surrounding words, examples, explanations, contrasts, word parts, and the general topic to estimate a word's meaning.</p><div class="example">“After walking for five hours, the travellers were exhausted and needed to rest.” <b>Exhausted</b> means extremely tired.</div></div></div>
+<div class="accordion"><summary>8.6 Recognising Structure — understand organisation</summary><div class="inside"><p>Identify topic sentences, supporting details, paragraph organisation, pronoun references, and linking expressions. Notice patterns such as cause and effect or problem and solution.</p></div></div>
+</section>
+
+<section class="panel" id="principles"><h2>09. Six Principles of Teaching Reading</h2>
+<div class="accordion" open><summary>Principle 1 — Encourage students to read as often and as much as possible</summary><div class="inside"><p>Regular reading increases familiarity with vocabulary, grammar, expressions, and text types. Encourage both extensive and intensive reading, especially the habit of extensive reading. Recommend stories, magazines, and online articles.</p></div></div>
+<div class="accordion"><summary>Principle 2 — Students need to be engaged with what they are reading</summary><div class="inside"><p>Engagement means being interested, involved, and mentally active. Choose attractive topics and activities that make students think. A football-related text, for example, may motivate football fans.</p></div></div>
+<div class="accordion"><summary>Principle 3 — Respond to the content, not just the construction</summary><div class="inside"><p>Students should react to a text's message, not only study grammar and structure. After a story about friendship, they might discuss a character's decision and explain their opinions.</p></div></div>
+<div class="accordion"><summary>Principle 4 — Prediction is a major factor in reading</summary><div class="inside"><p>Use titles, pictures, headlines, covers, and headings to predict content before reading. This activates prior knowledge and creates interest. Students then read to check their predictions.</p></div></div>
+<div class="accordion"><summary>Principle 5 — Match the task to the topic in intensive reading</summary><div class="inside"><p>Choose activities that fit the text. A news report may lead to questions about what, where, and why; an argumentative article may lead to identifying the writer's opinion and supporting evidence.</p></div></div>
+<div class="accordion"><summary>Principle 6 — Good teachers exploit reading texts to the full</summary><div class="inside"><p>Use a text as a starting point for vocabulary, grammar, discussion, summaries, writing, and speaking—not simply read it and move on. A passage about education can lead to discussion, new vocabulary, a summary, and opinions.</p></div></div>
+</section>
+
+<section class="panel" id="sequences"><h2>10. Reading Sequences</h2><p>A reading sequence is the set of stages and activities a teacher follows to organise a reading lesson.</p>
+<h3>10.1 Example One: Sunscreen — Pre-intermediate</h3>
+<ol><li>Show a picture of people sunbathing. Ask whether sunbathing is safe and how people can protect themselves.</li><li>Students read quickly and identify the source: a magazine for teenage girls.</li><li>They read again and identify skin, hair, and eye colours, arranging them by vulnerability to the sun.</li><li>Study vocabulary such as <i>SPF, freckles, fair hair,</i> and <i>dark-skinned</i>.</li><li>Extend learning through personal descriptions, character interviews, or a short talk about sun protection.</li></ol>
+<div class="callout"><b>Main idea:</b> Move from prediction and general understanding to detailed reading, vocabulary, speaking, and writing.</div>
+<h3>10.2 Example Two: Campaigns — Intermediate</h3>
+<p>The text is an online news article about Johnny Chester, a young student who campaigns to save a youth centre called The Grove.</p>
+<ol><li>Students preview the text and predict its source and topic.</li><li>They read quickly and answer: What is the important news? Why did the council change its mind?</li><li>Discuss reactions to the story.</li><li>Match vocabulary such as <i>funding, achievement, persuade,</i> and <i>survive</i> with meanings.</li><li>Read carefully and correct inaccurate statements.</li><li>Role-play a radio discussion in groups of five: a council wants to close the school and build a shopping centre. Students represent the council, school, and radio presenter.</li></ol>
+<div class="callout"><b>Main idea:</b> Reading can lead naturally to speaking, vocabulary development, discussion, and role-play.</div>
+<h3>10.3 Example Three: WebQuest — Intermediate to Advanced</h3>
+<p>A <b>WebQuest</b> is an internet-based learning activity. Students use websites selected by the teacher to research information and complete a task instead of searching the whole Internet without direction.</p>
+<div class="grid2"><div class="mini"><h4>1. Introduction</h4><p>Introduce the topic and background information; explain key vocabulary if needed.</p></div><div class="mini"><h4>2. Task</h4><p>Explain what students must do and the final product they should create.</p></div><div class="mini"><h4>3. Process</h4><p>Students visit selected websites, collect information, and complete assigned work.</p></div><div class="mini"><h4>4. Evaluation</h4><p>Evaluate learning, discuss findings, and study useful language.</p></div></div>
+<p><b>Book example:</b> A WebQuest about UFOs (Unidentified Flying Objects). Groups investigate different perspectives, including UFO believers and scientific views, then hold a debate and reach a conclusion based on collected information.</p>
+<p><b>Limitations:</b> WebQuests need internet access, sufficient English proficiency, and preparation time.</p>
+<div class="callout"><b>Main idea:</b> A WebQuest combines reading, research, teamwork, critical thinking, and speaking. It gives reading a real purpose.</div>
+</section>
+
+<section class="panel" id="activities"><h2>11. More Reading Suggestions</h2>
+<div class="accordion" open><summary>11.1 Jigsaw Reading</summary><div class="inside"><p>Different students or groups read different parts of a text or different texts on one topic. They share information to understand the complete story or situation. Example: groups read separate story sections, then exchange information to reconstruct the whole story. Develops comprehension, cooperation, communication, and information sharing.</p></div></div>
+<div class="accordion"><summary>11.2 Reading Puzzles</summary><div class="inside"><p>Students solve problems by organising or reconstructing written information. Example: arrange paragraphs cut from a story into the correct order, or put a series of emails in sequence. Develops awareness of connections and text organisation.</p></div></div>
+<div class="accordion"><summary>11.3 Using Newspapers</summary><div class="inside"><p>Match articles with headlines or pictures, compare reports of the same event, choose products or holidays from advertisements, or use articles for letters, opinions, and discussions.</p></div></div>
+<div class="accordion"><summary>11.4 Following Instructions</summary><div class="inside"><p>Read instructions and put them in order or follow them to complete a task, such as using a machine, operating a public telephone, or installing a printer cartridge. Pictures can be matched with instructions.</p></div></div>
+<div class="accordion"><summary>11.5 Recipes</summary><div class="inside"><p>Read ingredients and steps to prepare a meal. Match each step with a picture or arrange cooking instructions in the correct order. This connects reading with practical tasks.</p></div></div>
+<div class="accordion"><summary>11.6 Poetry</summary><div class="inside"><p>Give each student a different line; they read aloud and organise themselves into the poem's correct order without showing their lines. Alternatively, remove words and ask students to predict them from context, gradually giving first letters.</p></div></div>
+<div class="accordion"><summary>11.7 Play Extracts</summary><div class="inside"><p>Students read dialogue from a play or film and act out the scene. They consider stress, intonation, speed, and pronunciation. This links reading and speaking.</p></div></div>
+<div class="accordion"><summary>11.8 Predicting from Words and Pictures</summary><div class="inside"><p>Give groups clues before reading and ask them to predict a story. Example clues: “Knock on the door”; “Go away!”; “They find a man the next morning”; “He is dead”; “James is in the lighthouse.” Students compare predictions with the actual text.</p></div></div>
+<div class="accordion"><summary>11.9 Different Responses</summary><div class="inside"><p>Go beyond ordinary comprehension questions. Turn numbers and facts into a table, graph, or diagram; predict a missing ending; describe characters; imagine situations; identify the writer's attitude; or compare examples of a genre such as advertisements.</p></div></div>
+</section>
+
+<section class="panel" id="extensive"><h2>12. Encouraging Students to Read Extensively</h2>
+<p>Four factors help students become regular readers:</p>
+<div class="grid2">
+ <div class="mini"><h3>12.1 Library 📚</h3><p>Provide a collection of materials at different levels: novels, factual books, stories, and adaptations of films. Include easier and more challenging options so learners can find suitable texts.</p></div>
+ <div class="mini"><h3>12.2 Choice 🎯</h3><p>Allow students to choose according to interests, genres, and language levels. One student may prefer mysteries; another may prefer historical novels or science articles.</p></div>
+ <div class="mini"><h3>12.3 Feedback 💬</h3><p>Give opportunities to share reactions orally or in writing: comment on a favourite character or recommend a book. Avoid making every response a formal report or difficult test.</p></div>
+ <div class="mini"><h3>12.4 Time ⏳</h3><p>Provide time to read during the course, not only at home. For example, set aside ten minutes in some lessons. Teachers should read too, modelling the value of reading.</p></div>
+</div>
+<div class="callout">Teachers cannot force students to enjoy books. They can create opportunities, provide choice, and encourage reading habits.</div>
+</section>
+
+<section class="panel" id="review"><h2>13. Final Review: Main Ideas</h2>
+<ul><li>Reading is a receptive skill and an essential part of language learning.</li><li>It develops vocabulary, grammar, spelling, writing, fluency, knowledge, and critical thinking.</li><li>Extensive reading focuses on larger amounts of material for enjoyment and general understanding.</li><li>Intensive reading focuses on studying shorter texts carefully.</li><li>Teachers should select texts based on proficiency, background knowledge, interest, purpose, support, and productive challenge.</li><li>Students need skimming, scanning, reading for detail, inferring, guessing from context, and recognising structure.</li><li>The chapter presents six teaching principles, three reading sequences, and a range of creative classroom activities.</li><li>Library, choice, feedback, and time support extensive reading.</li></ul>
+<div class="callout"><b>Central message:</b> Teaching reading is not simply teaching students to understand words. It is teaching them to read effectively, independently, critically, and with enjoyment.</div>
+</section>
+
+<section class="panel" id="exam"><h2>★ Important Exam Differences</h2>
+<table><tr><th>Concepts</th><th>Main difference</th></tr>
+<tr><td><b>Extensive vs. Intensive reading</b></td><td>Extensive = read more for enjoyment and general understanding. Intensive = study a short text carefully.</td></tr>
+<tr><td><b>Skimming vs. Scanning</b></td><td>Skimming = find the general idea. Scanning = find specific information.</td></tr>
+<tr><td><b>Authentic vs. Graded texts</b></td><td>Authentic = written for real-world readers. Graded = adapted to learners' levels.</td></tr>
+<tr><td><b>Reading for detail vs. Inferring</b></td><td>Detail = identify explicit information. Inferring = understand implied information.</td></tr>
+<tr><td><b>Prediction vs. Guessing from context</b></td><td>Prediction = guess what a text may contain. Guessing from context = estimate the meaning of an unfamiliar word.</td></tr>
+<tr><td><b>Jigsaw reading vs. Reading puzzles</b></td><td>Jigsaw = share different information to build complete understanding. Puzzle = solve a reading problem, such as arranging paragraphs.</td></tr></table>
+<h3>Quick memory check</h3>
+<div class="mini"><p><b>1.</b> General idea? <span class="pill">Skimming</span></p><p><b>2.</b> A phone number or date? <span class="pill">Scanning</span></p><p><b>3.</b> Read a novel for enjoyment? <span class="pill">Extensive</span></p><p><b>4.</b> Analyse a paragraph's grammar? <span class="pill">Intensive</span></p><p><b>5.</b> Meaning suggested but not stated? <span class="pill">Inferring</span></p><p><b>6.</b> Four factors for extensive reading? <span class="pill">Library · Choice · Feedback · Time</span></p></div>
+</section>
+<div class="footer">TEACHING LANGUAGE SKILLS · PART ONE: TEACHING READING<br>Interactive study website · Designed for laptop, tablet, and mobile</div>
+</main>
+</div>
+<script>
+const body=document.body;
+const themeBtn=document.getElementById('theme');
+if(localStorage.getItem('reading-theme')==='dark'){body.classList.add('dark');themeBtn.textContent='☀️ Light mode'}
+themeBtn.addEventListener('click',()=>{body.classList.toggle('dark');let dark=body.classList.contains('dark');themeBtn.textContent=dark?'☀️ Light mode':'🌙 Dark mode';localStorage.setItem('reading-theme',dark?'dark':'light')});
+let font=17;
+document.getElementById('fontUp').onclick=()=>{font=Math.min(23,font+1);document.body.style.fontSize=font+'px'};
+document.getElementById('fontDown').onclick=()=>{font=Math.max(14,font-1);document.body.style.fontSize=font+'px'};
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{let q=search.value.toLowerCase().trim();document.querySelectorAll('main section.panel').forEach(section=>{let match=!q||section.innerText.toLowerCase().includes(q);section.style.display=match?'':'none'});});
+window.addEventListener('scroll',()=>{let h=document.documentElement;let max=h.scrollHeight-h.clientHeight;document.getElementById('progress').style.width=(max? h.scrollTop/max*100:0)+'%'});
+const links=[...document.querySelectorAll('.navlink')];
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-25% 0px -65% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
